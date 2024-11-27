@@ -6,21 +6,21 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white py-24">
+      <section className="bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white py-12 sm:py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 drop-shadow-lg">
               Transforme seu Negócio com Nossas Soluções
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-50">
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-blue-50 max-w-3xl mx-auto">
               Sistemas personalizados que impulsionam sua produtividade e resultados
             </p>
             <Link 
               href="/contato"
-              className="inline-flex items-center bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:text-blue-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center bg-white text-blue-900 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-blue-50 hover:text-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
               Solicite uma Demonstração
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="ml-2 -mr-1 w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </Link>
@@ -29,20 +29,22 @@ export default function Home() {
       </section>
 
       {/* Números e Estatísticas */}
-      <section className="py-16 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-12 sm:py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedStats />
         </div>
       </section>
 
       {/* Serviços */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Nossas Soluções</h2>
-            <p className="text-xl text-gray-600">Sistemas completos para todas as necessidades do seu negócio</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Nossas Soluções</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              Sistemas completos para todas as necessidades do seu negócio
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Sistema de Gestão */}
             <div className="bg-white p-6 rounded-xl shadow-lg hover-scale animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
@@ -107,10 +109,10 @@ export default function Home() {
       </section>
 
       {/* Diferenciais */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Por que nos escolher?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-12 sm:py-16 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Pronto para transformar seu negócio?
