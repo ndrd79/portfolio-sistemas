@@ -1,29 +1,72 @@
 'use client';
-import { useState } from 'react';
-import Link from 'next/link'
+import React, { useState, type ChangeEvent, type FormEvent } from 'react';
+
+interface FormData {
+  nome: string;
+  email: string;
+  telefone: string;
+  empresa: string;
+  sistema: string;
+  mensagem: string;
+}
 
 export default function Contato() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nome: '',
     email: '',
+    telefone: '',
     empresa: '',
-    sistema: 'Agendamento',
+    sistema: '',
     mensagem: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar o formulário
-    console.log('Dados do formulário:', formData);
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: data.message });
+        setFormData({
+          nome: '',
+          email: '',
+          telefone: '',
+          empresa: '',
+          sistema: '',
+          mensagem: ''
+        });
+      } else {
+        setSubmitStatus({ type: 'error', message: data.message });
+      }
+    } catch (error) {
+      setSubmitStatus({ 
+        type: 'error', 
+        message: 'Erro ao enviar mensagem. Por favor, tente novamente.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -154,6 +197,20 @@ export default function Contato() {
               </div>
 
               <div>
+                <label htmlFor="empresa" className="block text-sm font-medium text-gray-700">
+                  Empresa
+                </label>
+                <input
+                  type="text"
+                  name="empresa"
+                  id="empresa"
+                  value={formData.empresa}
+                  onChange={handleChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
                 <label htmlFor="sistema" className="block text-sm font-medium text-gray-700">
                   Sistema de Interesse
                 </label>
@@ -165,6 +222,7 @@ export default function Contato() {
                   onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 >
+                  <option value="">Selecione um sistema</option>
                   <option value="Agendamento">Sistema de Agendamento</option>
                   <option value="PDV">PDV</option>
                   <option value="CRM">CRM</option>
@@ -189,11 +247,18 @@ export default function Contato() {
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  disabled={isSubmitting}
+                  className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
-                  Enviar Mensagem
+                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                 </button>
               </div>
+
+              {submitStatus && (
+                <div className={`mt-4 text-sm text-${submitStatus.type === 'success' ? 'green' : 'red'}-600`}>
+                  {submitStatus.message}
+                </div>
+              )}
             </form>
           </div>
         </div>
