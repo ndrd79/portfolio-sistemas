@@ -31,17 +31,38 @@
   }
 }
 
-@keyframes countUp {
+@keyframes slideUp {
   from {
+    opacity: 0;
     transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
   to {
-    transform: translateY(0);
     opacity: 1;
   }
 }
 
-.animate-count {
-  animation: countUp 1s ease-out forwards;
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
 }

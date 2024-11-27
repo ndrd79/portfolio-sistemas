@@ -35,80 +35,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sistemas em Destaque */}
-      <section className="py-20 bg-white">
+      {/* Serviços */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-              Sistemas em Destaque
-            </h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Conheça algumas das nossas soluções que estão transformando empresas
-            </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Nossas Soluções</h2>
+            <p className="text-xl text-gray-600">Sistemas completos para todas as necessidades do seu negócio</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Sistema 1 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-secondary-900 mb-2">
-                  Sistema de Gestão Empresarial
-                </h3>
-                <p className="text-secondary-600 mb-4">
-                  Controle completo das operações da sua empresa em uma única plataforma.
-                </p>
-                <Link
-                  href="/sistemas#gestao"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
-                >
-                  Saiba mais
-                  <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
+            {/* Sistema de Gestão */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover-scale animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
               </div>
+              <h3 className="text-xl font-semibold mb-2">Sistema de Gestão</h3>
+              <p className="text-gray-600 mb-4">Controle completo das operações da sua empresa em uma única plataforma.</p>
+              <Link
+                href="/sistemas#gestao"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                Saiba mais
+                <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
             </div>
 
-            {/* Sistema 2 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-secondary-900 mb-2">
-                  E-commerce Personalizado
-                </h3>
-                <p className="text-secondary-600 mb-4">
-                  Plataforma completa de vendas online integrada com seu estoque.
-                </p>
-                <Link
-                  href="/sistemas#ecommerce"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
-                >
-                  Saiba mais
-                  <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
+            {/* E-commerce */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover-scale animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
               </div>
+              <h3 className="text-xl font-semibold mb-2">E-commerce</h3>
+              <p className="text-gray-600 mb-4">Plataforma completa de vendas online integrada com seu estoque.</p>
+              <Link
+                href="/sistemas#ecommerce"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                Saiba mais
+                <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
             </div>
 
-            {/* Sistema 3 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-secondary-900 mb-2">
-                  Automação de Processos
-                </h3>
-                <p className="text-secondary-600 mb-4">
-                  Automatize tarefas repetitivas e aumente a produtividade.
-                </p>
-                <Link
-                  href="/sistemas#automacao"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
-                >
-                  Saiba mais
-                  <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
+            {/* Automação */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover-scale animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
+              <h3 className="text-xl font-semibold mb-2">Automação</h3>
+              <p className="text-gray-600 mb-4">Automatize tarefas repetitivas e aumente a produtividade.</p>
+              <Link
+                href="/sistemas#automacao"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                Saiba mais
+                <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
