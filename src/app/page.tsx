@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-primary from-primary-800 via-primary-700 to-primary-600 text-white py-24">
+      <section className="bg-gradient-to-b from-primary-600 via-primary-500 to-primary-400 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
