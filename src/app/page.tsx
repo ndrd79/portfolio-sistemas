@@ -6,18 +6,18 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary-600 via-primary-500 to-primary-400 text-white py-24">
+      <section className="bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
               Transforme seu Negócio com Nossas Soluções
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-primary-50">
+            <p className="text-xl md:text-2xl mb-8 text-blue-50">
               Sistemas personalizados que impulsionam sua produtividade e resultados
             </p>
             <Link 
               href="/contato"
-              className="inline-flex items-center bg-white text-primary-800 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 hover:text-primary-900 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:text-blue-100 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Solicite uma Demonstração
               <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -29,7 +29,7 @@ export default function Home() {
       </section>
 
       {/* Números e Estatísticas */}
-      <section className="py-16 bg-gradient-to-b from-white to-primary-50">
+      <section className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedStats />
         </div>
@@ -59,7 +59,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/sistemas#gestao"
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
                 >
                   Saiba mais
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -80,7 +80,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/sistemas#ecommerce"
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
                 >
                   Saiba mais
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -101,7 +101,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/sistemas#automacao"
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
                 >
                   Saiba mais
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
